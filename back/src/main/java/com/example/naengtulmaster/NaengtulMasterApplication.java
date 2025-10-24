@@ -10,4 +10,5 @@ public class NaengtulMasterApplication {
         SpringApplication.run(NaengtulMasterApplication.class, args);
     }
 
+    //깃테스트
 }
