@@ -1,0 +1,78 @@
+# ===========================
+# Backend (Spring Boot)
+# ===========================
+
+*.bin
+*.lock
+*.iml
+
+# Gradle
+back/.gradle/
+back/build/
+back/gradle/
+back/gradlew
+back/gradlew.bat
+back/out/
+back/bin/
+
+# IntelliJ IDEA
+back/.idea/
+back/*.iml
+back/*.iws
+back/*.ipr
+
+# Eclipse
+back/.classpath
+back/.project
+back/.settings/
+
+# Application properties (API 키 보호)
+back/src/main/resources/application.properties
+back/src/main/resources/application.yml
+
+# ===========================
+# Frontend (React)
+# ===========================
+
+# Dependencies
+front/node_modules/
+front/.pnp
+front/.pnp.js
+
+# Testing
+front/coverage/
+
+# Production
+front/build/
+front/dist/
+
+# Misc
+front/.DS_Store
+front/.env
+front/.env.local
+front/.env.development.local
+front/.env.test.local
+front/.env.production.local
+
+# Logs
+front/npm-debug.log*
+front/yarn-debug.log*
+front/yarn-error.log*
+
+# IDE
+front/.vscode/
+front/.idea/
+
+# ===========================
+# OS
+# ===========================
+
+.DS_Store
+Thumbs.db
+
+# ===========================
+# Logs
+# ===========================
+
+*.log
+
