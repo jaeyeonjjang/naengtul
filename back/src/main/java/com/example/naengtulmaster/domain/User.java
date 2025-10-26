@@ -1,7 +1,9 @@
 package com.example.naengtulmaster.domain;
 
+
+import javax.persistence.*;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -20,14 +22,17 @@ public class User {
     @Column(nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "user_id", nullable = false, unique = true, length = 50)
-    private String userId;
-
     @Column(name = "user_name", nullable = false, length = 100)
     private String userName;
 
-    @Column(nullable = false, length = 255)
+    @Column(name = "nickname", nullable = false, length = 100)
+    private String nickname;
+
+    @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    private String role;
 
     @CreationTimestamp
     @Column(name = "input_date", nullable = false, updatable = false)
@@ -43,18 +48,21 @@ public class User {
     }
 
     // 생성자 (inputDate는 자동 생성)
-    public User(String userId, String userName, String password) {
-        this.userId = userId;
+    public User(String userName, String nickname, String password, String role) {
         this.userName = userName;
+        this.nickname = nickname;
         this.password = password;
+        this.role = role;
     }
+
 
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", userId='" + userId + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", userName='" + userName + '\'' +
-                ", inputDate=" + inputDate +
+                ", inputDate=" + inputDate + '\'' +
+                ", role=" + role +
                 '}';
     }
 

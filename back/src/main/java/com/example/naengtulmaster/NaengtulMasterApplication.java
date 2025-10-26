@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -25,6 +26,7 @@ public class NaengtulMasterApplication  implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
+
     public static void main(String[] args) {
         SpringApplication.run(NaengtulMasterApplication.class, args);
     }
@@ -39,10 +41,10 @@ public class NaengtulMasterApplication  implements CommandLineRunner {
         repository.saveAll(Arrays.asList(ingre1,ingre2,ingre3));
 
 
+        User user1 = new User("user" ,"재연" ,"{bcrypt}$2a$10$NVM0n8ElaRgg7zWO1CxUdei7vWoPg91Lz2aYavh9.f9q0e4bRadue","USER");
+        User user2 = new User("admin" ,"승호" ,"{bcrypt}$2a$10$8cjz47bjbR4Mn8GMg9IZx.vyjhLXR/SKKMSZ9.mP9vpMu0ssKi8GW","USER");
 
-        User user1 = new User("jyk" ,"김재연" ,"1111");
-
-        userRepository.save(user1);
+        userRepository.saveAll(Arrays.asList(user1,user2));
 
 
         Refrige ref1 = new Refrige(user1, ingre1 , "1개" , LocalDate.of(2025, 12, 12));
