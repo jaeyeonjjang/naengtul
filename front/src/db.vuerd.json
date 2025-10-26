@@ -4,8 +4,8 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -296.5471,
-    "scrollLeft": -87.8095,
+    "scrollTop": 0,
+    "scrollLeft": -123.1106,
     "zoomLevel": 0.8,
     "show": 431,
     "database": 4,
@@ -79,7 +79,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1761297325419,
+          "updateAt": 1761476187749,
           "createAt": 1761295501602
         }
       },
@@ -118,6 +118,7 @@
         "name": "user_refrige",
         "comment": "사용자 냉장고",
         "columnIds": [
+          "kFhp-Rd8m8EEHqY9p6eew",
           "7WeIAOsiWEiQrXmIi7M8p",
           "idLrsdmDWKWYwuclqDCMe",
           "JjRil9FzKwelGeK2QEL72",
@@ -126,6 +127,7 @@
         "seqColumnIds": [
           "XQ5PNIcL5yzZv4_5mv148",
           "rQik0-sGgRPrIhwlADoIU",
+          "kFhp-Rd8m8EEHqY9p6eew",
           "7WeIAOsiWEiQrXmIi7M8p",
           "idLrsdmDWKWYwuclqDCMe",
           "xoLEg-VFnszyxaH0d6RTm",
@@ -142,7 +144,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1761297331419,
+          "updateAt": 1761459648663,
           "createAt": 1761295971013
         }
       },
@@ -163,15 +165,15 @@
           "Qe6-R7aSpb_o5dLMdgSqe"
         ],
         "ui": {
-          "x": 723.75,
-          "y": 518.7498,
+          "x": 818.75,
+          "y": 492.4998,
           "zIndex": 261,
           "widthName": 60,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1761297327049,
+          "updateAt": 1761457782626,
           "createAt": 1761296208814
         }
       },
@@ -243,7 +245,7 @@
         "tableId": "-nnYbGZXlzSti1CGM6K8m",
         "name": "id",
         "comment": "고유ID (PK)",
-        "dataType": "INT",
+        "dataType": "BIGINT",
         "default": "",
         "options": 10,
         "ui": {
@@ -254,7 +256,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761295865771,
+          "updateAt": 1761462661505,
           "createAt": 1761295629224
         }
       },
@@ -323,7 +325,7 @@
         "tableId": "kvQbVC2gymABGzqI5gEKS",
         "name": "ingredient_id",
         "comment": "재료고유ID (PK)",
-        "dataType": "INT",
+        "dataType": "BIGINT",
         "default": "",
         "options": 10,
         "ui": {
@@ -334,7 +336,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761296046253,
+          "updateAt": 1761462667094,
           "createAt": 1761295782751
         }
       },
@@ -463,18 +465,18 @@
         "tableId": "G95GBWyrnY0L627S2GHLQ",
         "name": "quantity",
         "comment": "보유량 (예:2개,500g)",
-        "dataType": "VARCHAR",
+        "dataType": "VARCHAR(100)",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 110,
-          "widthDataType": 60,
+          "widthDataType": 89,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761296119576,
+          "updateAt": 1761413851306,
           "createAt": 1761296072458
         }
       },
@@ -502,19 +504,19 @@
         "id": "7WeIAOsiWEiQrXmIi7M8p",
         "tableId": "G95GBWyrnY0L627S2GHLQ",
         "name": "id",
-        "comment": "고유ID (PK)",
-        "dataType": "INT",
+        "comment": "고유ID (FK)",
+        "dataType": "BIGINT",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 2,
           "widthName": 60,
-          "widthComment": 63,
+          "widthComment": 62,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761296374541,
+          "updateAt": 1761462661505,
           "createAt": 1761296374541
         }
       },
@@ -602,19 +604,19 @@
         "id": "idLrsdmDWKWYwuclqDCMe",
         "tableId": "G95GBWyrnY0L627S2GHLQ",
         "name": "ingredient_id",
-        "comment": "재료고유ID (PK)",
-        "dataType": "INT",
+        "comment": "재료고유ID (FK)",
+        "dataType": "BIGINT",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 2,
           "widthName": 76,
-          "widthComment": 84,
+          "widthComment": 83,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761296688349,
+          "updateAt": 1761462667094,
           "createAt": 1761296688349
         }
       },
@@ -623,7 +625,7 @@
         "tableId": "d8gawPmbS18vXjWsGYvVh",
         "name": "recipe_id",
         "comment": "레시피 고유 ID",
-        "dataType": "INT",
+        "dataType": "BIGINT",
         "default": "",
         "options": 10,
         "ui": {
@@ -634,7 +636,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761296807749,
+          "updateAt": 1761462677919,
           "createAt": 1761296752352
         }
       },
@@ -803,7 +805,7 @@
         "tableId": "luAQPzLpx-4xTck9aQtEi",
         "name": "recipe_id",
         "comment": "레시피 고유 ID",
-        "dataType": "INT",
+        "dataType": "BIGINT",
         "default": "",
         "options": 8,
         "ui": {
@@ -814,7 +816,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761297095660,
+          "updateAt": 1761462677919,
           "createAt": 1761297095660
         }
       },
@@ -823,7 +825,7 @@
         "tableId": "luAQPzLpx-4xTck9aQtEi",
         "name": "ingredient_id",
         "comment": "재료고유ID (PK)",
-        "dataType": "INT",
+        "dataType": "BIGINT",
         "default": "",
         "options": 8,
         "ui": {
@@ -834,7 +836,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761297115103,
+          "updateAt": 1761462667094,
           "createAt": 1761297115103
         }
       },
@@ -843,7 +845,7 @@
         "tableId": "Ic2kDLbYx0COirtQNKopi",
         "name": "log_id",
         "comment": "로그ID",
-        "dataType": "INT",
+        "dataType": "BIGINT",
         "default": "",
         "options": 8,
         "ui": {
@@ -854,7 +856,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761297177637,
+          "updateAt": 1761462682989,
           "createAt": 1761297162300
         }
       },
@@ -923,7 +925,7 @@
         "tableId": "Ic2kDLbYx0COirtQNKopi",
         "name": "id",
         "comment": "고유ID (PK)",
-        "dataType": "INT",
+        "dataType": "BIGINT",
         "default": "",
         "options": 8,
         "ui": {
@@ -934,8 +936,28 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761297300994,
+          "updateAt": 1761462661505,
           "createAt": 1761297300994
+        }
+      },
+      "kFhp-Rd8m8EEHqY9p6eew": {
+        "id": "kFhp-Rd8m8EEHqY9p6eew",
+        "tableId": "G95GBWyrnY0L627S2GHLQ",
+        "name": "user_refrige_pk",
+        "comment": "PK",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 91,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761462672290,
+          "createAt": 1761459614905
         }
       }
     },
@@ -959,7 +981,7 @@
           "columnIds": [
             "7WeIAOsiWEiQrXmIi7M8p"
           ],
-          "x": 440.75,
+          "x": 462.75,
           "y": 489,
           "direction": 4
         },
@@ -1071,8 +1093,8 @@
           "columnIds": [
             "idLrsdmDWKWYwuclqDCMe"
           ],
-          "x": 656.25,
-          "y": 565,
+          "x": 700.25,
+          "y": 577,
           "direction": 2
         },
         "meta": {
@@ -1090,18 +1112,18 @@
           "columnIds": [
             "aPsPCtNwWQIgNi-6spb-X"
           ],
-          "x": 935.25,
-          "y": 646.7498,
-          "direction": 8
+          "x": 1241.75,
+          "y": 556.4998,
+          "direction": 2
         },
         "end": {
           "tableId": "luAQPzLpx-4xTck9aQtEi",
           "columnIds": [
             "wrr99RF8y5A61_QEH4PF6"
           ],
-          "x": 943.0593,
-          "y": 738.75,
-          "direction": 1
+          "x": 1282.8093,
+          "y": 674.75,
+          "direction": 4
         },
         "meta": {
           "updateAt": 1761297095660,
@@ -1127,7 +1149,7 @@
           "columnIds": [
             "zWE1p0eLxkgtNnmrQAtDU"
           ],
-          "x": 1169.5593,
+          "x": 1056.3093,
           "y": 674.75,
           "direction": 4
         },
