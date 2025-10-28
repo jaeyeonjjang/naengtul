@@ -1,27 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+
+// JSX의 장점
+// 모든 값이 렌더링되기 전에 JSX로 이스케이프를 거치므로 주입 공격이 예방된다.
+// 특히 자바스크립트 식을 중괄호 안에 넣어서 포함하는 기능이 유용하다
 
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">
+            refrigerator
+          </Typography>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }
 
-//vsc 깃테스트
 
 export default App;
