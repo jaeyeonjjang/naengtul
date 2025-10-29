@@ -35,14 +35,5 @@ public class RefrigeController {
         return ingredientRrepository.findAll();
     }
 
-    @PostMapping
-    public ResponseEntity<?> addRefrige(@RequestBody Refrige refrige) {
-        System.out.println("=== Incoming refrige ===");
-        System.out.println("ingredient.id = " + (refrige.getIngredient() != null ? refrige.getIngredient().getIngredientId() : "null"));
-        System.out.println("ingredient.name = " + (refrige.getIngredient() != null ? refrige.getIngredient().getIngredientName() : "null"));
-        System.out.println("========================");
-
-        return ResponseEntity.ok().build();
-    }
 
 }
