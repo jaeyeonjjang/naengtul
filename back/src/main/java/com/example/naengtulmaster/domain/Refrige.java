@@ -1,6 +1,8 @@
 package com.example.naengtulmaster.domain;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -24,20 +26,20 @@ public class Refrige {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ingredient_id", nullable = false)
-    @RestResource(exported = false)
+    @RestResource(exported = false) // 붙여야 json에 link가 아니라 컬럼으로 출력됨
     private Ingredient ingredient;
 
     @Column(name = "quantity", length = 50)
     private String quantity;
 
     @Column(name = "expire_date")
-    private LocalDate expireDate;
+    private String expireDate;
 
 
     public Refrige() {
     }
 
-    public Refrige(User user, Ingredient ingredient, String quantity, LocalDate expireDate) {
+    public Refrige(User user, Ingredient ingredient, String quantity, String expireDate) {
         super();
         this.user = user;
         this.ingredient = ingredient;

@@ -34,11 +34,13 @@ public class NaengtulMasterApplication  implements CommandLineRunner {
     //어플리케이션이 완전히 시작되기 전 추카 코드 실행
     @Override
     public void run(String... args) throws Exception {
-        Ingredient ingre1 = new Ingredient("무","채소");
-        Ingredient ingre2 = new Ingredient("당근","채소");
-        Ingredient ingre3 = new Ingredient("소고기","육류");
+        Ingredient ingre1 = new Ingredient("무","채소","...");
+        Ingredient ingre2 = new Ingredient("당근","채소","...");
+        Ingredient ingre3 = new Ingredient("소고기","육류","...");
+        Ingredient ingre4 = new Ingredient("돼지고기","육류","...");
+        Ingredient ingre5 = new Ingredient("머스타드","소스","...");
 
-        repository.saveAll(Arrays.asList(ingre1,ingre2,ingre3));
+        repository.saveAll(Arrays.asList(ingre1,ingre2,ingre3,ingre4,ingre5));
 
 
         User user1 = new User("user" ,"재연" ,"{bcrypt}$2a$10$NVM0n8ElaRgg7zWO1CxUdei7vWoPg91Lz2aYavh9.f9q0e4bRadue","USER");
@@ -47,8 +49,11 @@ public class NaengtulMasterApplication  implements CommandLineRunner {
         userRepository.saveAll(Arrays.asList(user1,user2));
 
 
-        Refrige ref1 = new Refrige(user1, ingre1 , "1개" , LocalDate.of(2025, 12, 12));
-        Refrige ref2 = new Refrige(user1, ingre3 , "600g" , LocalDate.of(2025, 11, 1));
+/*        Refrige ref1 = new Refrige(user1, ingre1 , "1개" , LocalDate.of(2025, 12, 12));
+        Refrige ref2 = new Refrige(user1, ingre3 , "600g" , LocalDate.of(2025, 11, 1));*/
+
+        Refrige ref1 = new Refrige(user1, ingre1 , "1개" , "250408");
+        Refrige ref2 = new Refrige(user1, ingre3 , "600g" ,"251223");
 
         refRepository.saveAll(Arrays.asList(ref1,ref2));
 

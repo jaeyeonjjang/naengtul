@@ -1,10 +1,17 @@
 import React,{useEffect, useState}  from 'react';
 import { SERVER_URL } from '../constants.js';
 import { DataGrid } from '@mui/x-data-grid';
+import Snackbar from '@mui/material/Snackbar'; //알림 컴포넌트
+import AddRefrigerator from './AddRefrigerator.jsx';
 
 function Refrigerator () {
 
     const [refrige, setRefrige] = useState([]);
+
+    const [open, setOpen] = useState(false);  //Snackbar 열림 여부
+
+//user_refrige_pk
+
 const columns = [
     {
         field: 'userNickname', 
@@ -19,16 +26,59 @@ const columns = [
         valueGetter: (value, row) => row.ingredient?.ingredientName || 'N/A'
     },
     {field: 'quantity', headerName: '수량', width: 100},
-    {field: 'expireDate', headerName: '유통기한', width: 150}
+    {field: 'expireDate', headerName: '유통기한', width: 150},
+    {field: '_links.self.href', 
+        headerName:'', 
+        sortable: false, 
+        filterable:false, 
+        renderCell:row => 
+            <button 
+            onClick={() => onDelClick(row.id)}>Delete</button>}
 ]
 
+    const onDelClick = (url) => {
 
-    useEffect(() => {
+        if(window.confirm('정말 삭제하시겠습니까?')){
+            fetch(url, {method: 'DELETE'})
+            .then(res => { 
+                if(res.ok){
+                    fetchRefrige(); setOpen(true); 
+                }else {
+                    alert('삭제에 실패했습니다.');
+                }})
+            .catch(err => console.error(err));
+        }
+    }
+
+    const fetchRefrige = () => {
         fetch(SERVER_URL + 'api/refriges')
         .then(response => response.json())
         .then(data => setRefrige(data._embedded.refriges))
         .catch(err => console.error(err));
+    }
+
+
+    useEffect(() => {
+        fetchRefrige();
     }, []); 
+
+
+    const addRefrigerator = (refrige) => {
+        fetch(SERVER_URL + 'api/refriges', 
+        {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(refrige  )
+        })
+        .then(res => {
+            if(res.ok){
+                fetchRefrige();
+            } else {
+                alert('추가에 실패했습니다.');
+            }
+        })
+        .catch(err => console.error(err));
+    }
 
     return (
         // <div>
@@ -46,11 +96,25 @@ const columns = [
         //         </tbody>
         //     </table>
         // </div>
-        <div style={{ height: 500, width: '100%' }}>
-            <DataGrid rows={refrige} columns={columns}
-            getRowId={row => row._links.self.href}
-            />
-        </div>
+        <React.Fragment>
+            <AddRefrigerator addRefrigerator={addRefrigerator}/>
+            <div style={{ height: 500, width: '100%' }}>
+                <DataGrid 
+                    rows={refrige} 
+                    columns={columns}
+                    disableSelectionOnClick={true}
+                    getRowId={row => row._links.self.href}
+                />
+                <Snackbar
+                    open={open}
+                    message="삭제되었습니다."
+                    autoHideDuration={2000}
+                    onClose={() => setOpen(false)}
+                />  
+            </div>
+        </React.Fragment>
+
+
     );
 };
 

@@ -21,6 +21,8 @@ public class Ingredient {
 
     private String category;
 
+    private String imgUrl;
+
 /*    @JsonIgnore
     @OneToOne(mappedBy = "user_refrige")
     private Refrige refrige;*/
@@ -28,9 +30,10 @@ public class Ingredient {
     public Ingredient() {
     }
 
-    public Ingredient(String ingredientName, String category) {
+    public Ingredient(String ingredientName, String category, String imgUrl) {
         this.ingredientName = ingredientName;
         this.category = category;
+        this.imgUrl = imgUrl;
     }
 
     @Override

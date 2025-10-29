@@ -11,4 +11,7 @@ public interface IngredientRepository extends CrudRepository<Ingredient, Long> {
 
     //재료 아이디로 재료를 검색
     List<Ingredient> findByIngredientId(Long id);
+
+    //재료 이름으로 재료를 검색
+    List<Ingredient> findByIngredientName(String ingredientName);
 }
