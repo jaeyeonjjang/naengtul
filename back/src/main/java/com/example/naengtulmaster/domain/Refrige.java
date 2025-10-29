@@ -3,6 +3,7 @@ package com.example.naengtulmaster.domain;
 import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.time.LocalDate;
 
@@ -23,6 +24,7 @@ public class Refrige {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ingredient_id", nullable = false)
+    @RestResource(exported = false)
     private Ingredient ingredient;
 
     @Column(name = "quantity", length = 50)

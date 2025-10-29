@@ -58,16 +58,16 @@
         "comment": "사용자정보",
         "columnIds": [
           "Cs32N2htH9Wdef6cEJN7A",
-          "IuacJotZ-0tYmhWPPiRtS",
           "q5oRvveSap8b94sJXWSgX",
+          "IuacJotZ-0tYmhWPPiRtS",
           "DgGRgDNzmPfpl6OFWCjVC",
           "3al1u1eGDo3465o3Fdocc",
           "O8mztqQX6GYOKecU4pyX5"
         ],
         "seqColumnIds": [
           "Cs32N2htH9Wdef6cEJN7A",
-          "IuacJotZ-0tYmhWPPiRtS",
           "q5oRvveSap8b94sJXWSgX",
+          "IuacJotZ-0tYmhWPPiRtS",
           "DgGRgDNzmPfpl6OFWCjVC",
           "3al1u1eGDo3465o3Fdocc",
           "O8mztqQX6GYOKecU4pyX5"
@@ -81,7 +81,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1761476641932,
+          "updateAt": 1761482579487,
           "createAt": 1761295501602
         }
       },
@@ -346,7 +346,7 @@
         "id": "IuacJotZ-0tYmhWPPiRtS",
         "tableId": "-nnYbGZXlzSti1CGM6K8m",
         "name": "nickname",
-        "comment": "사용자 별명",
+        "comment": "사용자명",
         "dataType": "VARCHAR(50)",
         "default": "",
         "options": 8,
@@ -358,7 +358,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1761482572417,
+          "updateAt": 1761482585276,
           "createAt": 1761295803601
         }
       },

@@ -1,9 +1,11 @@
 package com.example.naengtulmaster.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,6 +20,10 @@ public class Ingredient {
     private String ingredientName;
 
     private String category;
+
+/*    @JsonIgnore
+    @OneToOne(mappedBy = "user_refrige")
+    private Refrige refrige;*/
 
     public Ingredient() {
     }

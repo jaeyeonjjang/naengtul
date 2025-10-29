@@ -69,7 +69,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
         http.csrf().disable().cors().and()
+                        .authorizeRequests().anyRequest().permitAll();
+
+/*        http.csrf().disable().cors().and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
@@ -80,7 +84,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 // 잘못된 자격 증명 예외처리
                 .exceptionHandling()
                 .authenticationEntryPoint(exceptionHandler).and()
-                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);*/
     }
 
     //eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc2MTY1ODQ3MX0.WDakJtLj7WWsvXAwbOl6rsc9mnsFPO1wUqrblUnKtkc
