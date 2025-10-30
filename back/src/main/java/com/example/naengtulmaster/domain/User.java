@@ -22,8 +22,8 @@ public class User {
     @Column(nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "user_name", nullable = false, length = 100)
-    private String userName;
+    @Column(name = "username", nullable = false, length = 100)
+    private String username;
 
     @Column(name = "nickname", nullable = false, length = 100)
     private String nickname;
@@ -48,8 +48,8 @@ public class User {
     }
 
     // 생성자 (inputDate는 자동 생성)
-    public User(String userName, String nickname, String password, String role) {
-        this.userName = userName;
+    public User(String username, String nickname, String password, String role) {
+        this.username = username;
         this.nickname = nickname;
         this.password = password;
         this.role = role;
@@ -60,7 +60,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", nickname='" + nickname + '\'' +
-                ", userName='" + userName + '\'' +
+                ", username='" + username + '\'' +
                 ", inputDate=" + inputDate + '\'' +
                 ", role=" + role +
                 '}';

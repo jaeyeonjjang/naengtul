@@ -70,24 +70,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.csrf().disable().cors().and()
-                        .authorizeRequests().anyRequest().permitAll();
-
 /*        http.csrf().disable().cors().and()
+                        .authorizeRequests().anyRequest().permitAll();*/ //테스트용
+
+        http.csrf().disable().cors().and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                // /login 엔드포인트에 대한 POST 요청은 보호되지 않음
+                // /login 엔드포인트에 대한 POST 요청은 보호되지 않음 -> 접근가능
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
-                // 다른 모든 요청은 보호됨
+                // 다른 모든 요청은 보호됨 -> 접근불가
                 .anyRequest().authenticated().and()
                 // 잘못된 자격 증명 예외처리
                 .exceptionHandling()
                 .authenticationEntryPoint(exceptionHandler).and()
-                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);*/
+                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
-    //eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc2MTY1ODQ3MX0.WDakJtLj7WWsvXAwbOl6rsc9mnsFPO1wUqrblUnKtkc
 
     @Autowired
     private AuthenticationFilter authenticationFilter;

@@ -3,6 +3,9 @@ import { SERVER_URL } from '../constants.js';
 import { DataGrid } from '@mui/x-data-grid';
 import Snackbar from '@mui/material/Snackbar'; //알림 컴포넌트
 import AddRefrigerator from './AddRefrigerator.jsx';
+import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Refrigerator () {
 
@@ -32,8 +35,9 @@ const columns = [
         sortable: false, 
         filterable:false, 
         renderCell:row => 
-            <button 
-            onClick={() => onDelClick(row.id)}>Delete</button>}
+            <IconButton onClick={() => onDelClick(row.id)}>
+                <DeleteIcon color="errer"/>
+            </IconButton>}
 ]
 
     const onDelClick = (url) => {
@@ -51,7 +55,12 @@ const columns = [
     }
 
     const fetchRefrige = () => {
-        fetch(SERVER_URL + 'api/refriges')
+
+        //세션 저장소에서 토큰을 읽고 Authorization 헤더에 이를 포함한다.
+        const token = sessionStorage.getItem("jwt");
+        fetch(SERVER_URL + 'api/refriges',{
+            headers: {'Authorization': token}
+        })
         .then(response => response.json())
         .then(data => setRefrige(data._embedded.refriges))
         .catch(err => console.error(err));
@@ -97,7 +106,10 @@ const columns = [
         //     </table>
         // </div>
         <React.Fragment>
-            <AddRefrigerator addRefrigerator={addRefrigerator}/>
+            {/* <AddRefrigerator addRefrigerator={addRefrigerator}/> */}
+            <Stack mt={2} mb={2}>
+                <AddRefrigerator addRefrigerator={addRefrigerator}/>
+            </Stack>
             <div style={{ height: 500, width: '100%' }}>
                 <DataGrid 
                     rows={refrige} 
