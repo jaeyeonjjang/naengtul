@@ -1,5 +1,7 @@
 package com.example.naengtulmaster;
 
+import com.example.naengtulmaster.domain.Refrige;
+import com.example.naengtulmaster.domain.RefrigeRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,6 +20,9 @@ public class RefrigeRestTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @Autowired
+    private RefrigeRepository repository;
+
     @Test
     public void testAuthentication() throws Exception {
         // 올바른 자격 증명으로 인증 테스트
@@ -27,5 +32,11 @@ public class RefrigeRestTest {
                 header(HttpHeaders.CONTENT_TYPE, "application/json")).
                 andDo(print()).andExpect(status().isOk());
     }
+
+
+    @Test
+     public void getMyRefrige(){
+            System.out.println("refriges :: " + repository.findAll());
+        }
 
 }

@@ -3,7 +3,8 @@ import { SERVER_URL } from '../constants.js';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
-import Refrigerator from './Refrigerator.js';
+// import Refrigerator from './Refrigerator.js';
+import MainPage from '../pages/MainPage.jsx';
 
 
 function Login() {
@@ -45,7 +46,8 @@ function Login() {
 
 
     if(isAuthenticated) {
-        return <Refrigerator />;
+        return <MainPage />;
+        // return <Refrigerator />;
     } else {
         return (
             <div>
