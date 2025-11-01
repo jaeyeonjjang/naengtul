@@ -5,7 +5,7 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": -327.03,
-    "scrollLeft": -123.1106,
+    "scrollLeft": -400.5112,
     "zoomLevel": 0.8,
     "show": 431,
     "database": 4,
@@ -92,7 +92,8 @@
         "columnIds": [
           "mdHuYd3_PHVUEK6As5x1d",
           "yz1vz2Ji3rSG2HFEgQNY2",
-          "eIWysqGXBq_-WFTb9rlJy"
+          "eIWysqGXBq_-WFTb9rlJy",
+          "8wKfzFVVzQ4cJ7BA5wkLN"
         ],
         "seqColumnIds": [
           "mdHuYd3_PHVUEK6As5x1d",
@@ -100,7 +101,8 @@
           "eIWysqGXBq_-WFTb9rlJy",
           "SjMuzjyY1wgsJ4yaswPVJ",
           "nRKluvZZaI9GJg-u_2ZJg",
-          "urlB3ZzaFlGaTYUOI4Igm"
+          "urlB3ZzaFlGaTYUOI4Igm",
+          "8wKfzFVVzQ4cJ7BA5wkLN"
         ],
         "ui": {
           "x": 798.5,
@@ -111,7 +113,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1761297316115,
+          "updateAt": 1761737365541,
           "createAt": 1761295758211
         }
       },
@@ -981,6 +983,26 @@
           "updateAt": 1761476656602,
           "createAt": 1761476641931
         }
+      },
+      "8wKfzFVVzQ4cJ7BA5wkLN": {
+        "id": "8wKfzFVVzQ4cJ7BA5wkLN",
+        "tableId": "kvQbVC2gymABGzqI5gEKS",
+        "name": "img_url",
+        "comment": "이미지 경로",
+        "dataType": "VARCHAR(100)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 89,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1761737377517,
+          "createAt": 1761737365541
+        }
       }
     },
     "relationshipEntities": {
@@ -1107,7 +1129,7 @@
             "mdHuYd3_PHVUEK6As5x1d"
           ],
           "x": 798.5,
-          "y": 356.75,
+          "y": 368.75,
           "direction": 1
         },
         "end": {
@@ -1163,7 +1185,7 @@
             "mdHuYd3_PHVUEK6As5x1d"
           ],
           "x": 1026,
-          "y": 420.75,
+          "y": 444.75,
           "direction": 8
         },
         "end": {
