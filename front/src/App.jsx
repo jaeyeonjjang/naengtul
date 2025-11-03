@@ -3,10 +3,11 @@ import './App.css';
 // import AppBar from '@mui/material/AppBar';
 // import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
-// import Refrigerator from './components/Refrigerator';
+ import Refrigerator from './components/Refrigerator';
 // import Login from './components/Login';
 import Header from './components/Header';
 import MainPage from './pages/MainPage.jsx';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 // JSX의 장점
 // 모든 값이 렌더링되기 전에 JSX로 이스케이프를 거치므로 주입 공격이 예방된다.
@@ -19,8 +20,13 @@ function App() {
 
   return (
     <div className="App">
-      <div className="text-3xl font-bold underline">hello</div>
       <Header/>
+        <Router>
+          <Routes>
+            <Route path="/" element={<MainPage/>} />
+            <Route path="/refrigerator" element={<Refrigerator/>} />
+          </Routes>
+        </Router>
       {/* <AppBar position="static">
         <Toolbar>
           <Typography variant="h6">
@@ -29,7 +35,7 @@ function App() {
         </Toolbar>
       </AppBar> */}
       {/* <Login/> */}
-      <MainPage/>
+      {/* <MainPage/> */}
     </div>
   );
 }

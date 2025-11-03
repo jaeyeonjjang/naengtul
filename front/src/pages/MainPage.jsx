@@ -1,15 +1,19 @@
 import React from 'react';
 import MainRefrige from '../components/MainRefrige.jsx';
 import MainAIRecommend from '../components/MainAIRecommend.js';
+import { useNavigate } from 'react-router-dom';
 
 function MainPage () {
+
+  const navigate = useNavigate();
+
     return (
         <div>
             <MainRefrige/>
             <section className="mt-8 px-5">
                 <div className="bg-[#FBBE00] rounded-2xl p-4 flex justify-between items-center">
                 <div>
-                    <p className="text-white font-semibold">AI 레시피 추천 받기</p>
+                    <p className="text-white font-semibold"  >AI 레시피 추천 받기</p>
                     <button className="mt-2 bg-white text-[#FBBE00] font-bold px-4 py-1 rounded-full">
                     GO
                     </button>
