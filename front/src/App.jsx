@@ -7,7 +7,8 @@ import './App.css';
 // import Login from './components/Login';
 import Header from './components/Header';
 import MainPage from './pages/MainPage.jsx';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MyRefrigerator from './components/MyRefrigerator.js';
 
 // JSX의 장점
 // 모든 값이 렌더링되기 전에 JSX로 이스케이프를 거치므로 주입 공격이 예방된다.
@@ -20,11 +21,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
-        <Router>
+      <Router>
+         <Header/>
           <Routes>
             <Route path="/" element={<MainPage/>} />
-            <Route path="/refrigerator" element={<Refrigerator/>} />
+            <Route path="/MyRefrigerator" element={<MyRefrigerator/>} />
           </Routes>
         </Router>
       {/* <AppBar position="static">

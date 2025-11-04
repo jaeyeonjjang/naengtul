@@ -1,11 +1,9 @@
 import React from 'react';
 import MainRefrige from '../components/MainRefrige.jsx';
 import MainAIRecommend from '../components/MainAIRecommend.js';
-import { useNavigate } from 'react-router-dom';
 
 function MainPage () {
 
-  const navigate = useNavigate();
 
     return (
         <div>

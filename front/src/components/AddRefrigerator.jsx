@@ -44,7 +44,7 @@ function AddRefrigerator(props) {
 
     return (
         <div>
-            <button onClick={handleClickOpen}>Add Refrigerator</button>
+            <button  className="px-4 py-1.5 rounded-full text-sm border border-gray-300 text-gray-600 flex items-center gap-1" onClick={handleClickOpen}>등록</button>
             <Dialog open={open} onClose={() => setOpen(false)}>
                 <DialogTitle>Add Refrigerator</DialogTitle>
                 <DialogContent>

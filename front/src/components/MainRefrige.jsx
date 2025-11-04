@@ -17,7 +17,7 @@ function MainRefrige (){
                     <h2 className="text-lg font-bold">나의 냉장고</h2>
                     <p className="text-sm text-orange-500">my refrige</p>
                 </div>
-                <button className="text-sm text-gray-400" onClick={() => navigate('/Refrigerator')}>See all</button>
+                <button className="text-sm text-gray-400" onClick={() => navigate('/MyRefrigerator')}>See all</button>
                 </div>
 
                 <div className="flex gap-4">

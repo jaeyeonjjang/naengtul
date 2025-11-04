@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import { styled, alpha } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from "react-router-dom";
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -46,6 +48,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+
+  const navigate = useNavigate();
+
   return (
     <AppBar
       position="static"
@@ -62,8 +67,10 @@ export default function Header() {
       <Toolbar sx={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}>
         {/* 상단 로고 + 메뉴 */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-          <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-            Naengtul <span style={{ fontWeight: 400 }}>master</span>
+          <Typography variant="h6" sx={{ fontWeight: 'bold' }}  >
+            <button onClick={() => navigate("/")}>
+              Naengtul <span style={{ fontWeight: 400 }}>master</span>
+            </button>
           </Typography>
           <IconButton edge="end" color="inherit">
             <MenuIcon />
