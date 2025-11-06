@@ -58,7 +58,9 @@ const columns = [
 
         //세션 저장소에서 토큰을 읽고 Authorization 헤더에 이를 포함한다.
         const token = sessionStorage.getItem("jwt");
-        fetch(SERVER_URL + 'api/refriges',{
+        //임시 테스트용 데이터
+        //http://localhost:9090/api/refriges/search/findByUserId?id=1
+        fetch('http://localhost:9090/api/refriges/search/findByUserId?id=1',{
             headers: {'Authorization': token}
         })
         .then(response => response.json())
